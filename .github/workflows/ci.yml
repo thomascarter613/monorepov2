@@ -26,20 +26,8 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Biome
-        run: bun run check
-
-      - name: Dependency consistency
-        run: bun run deps:check
-
-      - name: Dead code
-        run: bun run deadcode
-
-      - name: Architecture boundaries
-        run: bun run arch
-
-      - name: Moon tasks
-        run: bunx moon run :typecheck :test :build
+      - name: Verify
+        run: bun run verify
 
   security:
     name: security
