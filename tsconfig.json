@@ -1,12 +1,29 @@
 {
   "files": [],
   "references": [
-    { "path": "./apps/web" },
-    { "path": "./services/api" },
-    { "path": "./packages/ui" },
-    { "path": "./packages/types" },
-    { "path": "./packages/config" },
-    { "path": "./packages/sdk" },
-    { "path": "./packages/testing" }
+    {
+      "path": "./apps/web"
+    },
+    {
+      "path": "./packages/config"
+    },
+    {
+      "path": "./packages/observability"
+    },
+    {
+      "path": "./packages/sdk"
+    },
+    {
+      "path": "./packages/testing"
+    },
+    {
+      "path": "./packages/types"
+    },
+    {
+      "path": "./packages/ui"
+    },
+    {
+      "path": "./services/api"
+    }
   ]
 }

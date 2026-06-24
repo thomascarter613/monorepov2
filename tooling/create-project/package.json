@@ -1,0 +1,8 @@
+{
+  "name": "@repo/create-project",
+  "private": true,
+  "scripts": {
+    "start": "bun run src/index.ts"
+  },
+  "type": "module"
+}

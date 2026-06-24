@@ -23,6 +23,7 @@
     "build": "moon run :build",
     "check": "bunx biome check .",
     "check:write": "bunx biome check --write .",
+    "create": "bun run tooling/create-project/src/index.ts",
     "deadcode": "bunx knip",
     "deps:check": "bunx syncpack lint && bunx syncpack format --check",
     "deps:fix": "bunx syncpack fix && bunx syncpack format",

@@ -1,0 +1,12 @@
+layer: 'library'
+stack: 'backend'
+
+project:
+  title: '@repo/observability'
+  description: '@repo/observability project'
+  owner: 'platform'
+  maintainers:
+    - '@thomas.carter'
+
+tags:
+  - 'backend'
