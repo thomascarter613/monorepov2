@@ -21,6 +21,7 @@
   "scripts": {
     "arch": "bunx depcruise . --config .dependency-cruiser.cjs",
     "build": "moon run :build",
+    "catalog:check": "bun run scripts/catalog/check.ts",
     "check": "bunx biome check .",
     "check:write": "bunx biome check --write .",
     "create": "bun run tooling/create-project/src/index.ts",
@@ -35,7 +36,7 @@
     "security:secrets": "gitleaks detect --source . --verbose",
     "test": "moon run :test",
     "typecheck": "moon run :typecheck",
-    "verify": "bun run check && bun run deps:check && bun run deadcode && bun run arch && moon run :typecheck :test :build"
+    "verify": "bun run check && bun run deps:check && bun run deadcode && bun run arch && bun run catalog:check && moon run :typecheck :test :build"
   },
   "type": "module",
   "workspaces": [

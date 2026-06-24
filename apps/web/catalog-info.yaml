@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+
+kind: Component
+metadata:
+name: web
+description: @repo/web
+annotations:
+backstage.io/techdocs-ref: dir:.
+spec:
+type: website
+lifecycle: experimental
+owner: platform
+system: monorepo-platform
