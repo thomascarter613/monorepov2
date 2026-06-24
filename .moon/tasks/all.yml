@@ -24,7 +24,7 @@ tasks:
       - '@group(configs)'
 
   typecheck:
-    command: 'bunx tsc --noEmit'
+    command: 'bun run typecheck'
     inputs:
       - '@group(sources)'
       - '@group(configs)'
@@ -34,8 +34,6 @@ tasks:
     inputs:
       - '@group(sources)'
       - '@group(tests)'
-    outputs:
-      - 'coverage'
 
   build:
     command: 'bun run build'
@@ -44,5 +42,3 @@ tasks:
     inputs:
       - '@group(sources)'
       - '@group(configs)'
-    outputs:
-      - 'dist'

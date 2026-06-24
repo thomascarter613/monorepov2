@@ -1,5 +1,6 @@
-import { name as uiName } from "@repo/ui";
+import { createHealthResult } from "@repo/sdk";
+import { renderHealthBadge } from "@repo/ui";
 
 export function render() {
-  return `web using ${uiName}`;
+  return renderHealthBadge(createHealthResult("web"));
 }

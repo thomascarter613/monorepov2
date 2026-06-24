@@ -1,9 +1,9 @@
-import { name as configName } from "@repo/config";
+import { runtimeConfig } from "@repo/config";
+import type { ServiceHealth } from "@repo/types";
 
-export function health() {
+export function health(): ServiceHealth {
   return {
     ok: true,
-    service: "@repo/api",
-    configPackage: configName,
+    service: `api:${runtimeConfig.environment}`,
   };
 }

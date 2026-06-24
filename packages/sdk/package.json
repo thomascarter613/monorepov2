@@ -1,20 +1,21 @@
 {
   "name": "@repo/sdk",
-  "private": true,
-  "type": "module",
-  "main": "./src/index.ts",
+  "version": "0.1.0",
+  "dependencies": {
+    "@repo/config": "workspace:*",
+    "@repo/types": "workspace:*"
+  },
+  "devDependencies": {},
   "exports": {
     ".": "./src/index.ts"
   },
+  "main": "./src/index.ts",
+  "private": true,
   "scripts": {
-    "build": "tsc --noEmit",
+    "build": "tsc -b --pretty false",
+    "lint": "biome check .",
     "test": "vitest run --passWithNoTests",
-    "typecheck": "tsc --noEmit",
-    "lint": "biome check ."
+    "typecheck": "tsc -b --pretty false"
   },
-  "dependencies": {
-    "@repo/types": "workspace:*",
-    "@repo/config": "workspace:*"
-  },
-  "devDependencies": {}
+  "type": "module"
 }

@@ -1,20 +1,21 @@
 {
   "name": "@repo/web",
-  "private": true,
-  "type": "module",
-  "main": "./src/index.ts",
+  "version": "0.1.0",
+  "dependencies": {
+    "@repo/sdk": "workspace:*",
+    "@repo/ui": "workspace:*"
+  },
+  "devDependencies": {},
   "exports": {
     ".": "./src/index.ts"
   },
+  "main": "./src/index.ts",
+  "private": true,
   "scripts": {
-    "build": "tsc --noEmit",
+    "build": "tsc -b --pretty false",
+    "lint": "biome check .",
     "test": "vitest run --passWithNoTests",
-    "typecheck": "tsc --noEmit",
-    "lint": "biome check ."
+    "typecheck": "tsc -b --pretty false"
   },
-  "dependencies": {
-    "@repo/ui": "workspace:*",
-    "@repo/sdk": "workspace:*"
-  },
-  "devDependencies": {}
+  "type": "module"
 }

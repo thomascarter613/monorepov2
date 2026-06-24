@@ -1,1 +1,4 @@
-export const name = "@repo/types";
+export type ServiceHealth = {
+  ok: boolean;
+  service: string;
+};

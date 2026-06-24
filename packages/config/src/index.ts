@@ -1,1 +1,3 @@
-export const name = "@repo/config";
+export const runtimeConfig = {
+  environment: process.env.NODE_ENV ?? "development",
+} as const;

@@ -1,9 +1,15 @@
 {
   "$schema": "https://unpkg.com/knip@latest/schema.json",
   "workspaces": {
-    "apps/*": {},
-    "services/*": {},
-    "packages/*": {}
+    "apps/*": {
+      "project": ["src/**/*.ts"]
+    },
+    "services/*": {
+      "project": ["src/**/*.ts"]
+    },
+    "packages/*": {
+      "project": ["src/**/*.ts"]
+    }
   },
-  "ignore": ["dist/**", "build/**", "coverage/**", "infra/**"]
+  "ignoreBinaries": ["gitleaks", "trivy", "syft"]
 }

@@ -4,7 +4,6 @@ projects:
     - 'apps/*'
     - 'services/*'
     - 'packages/*'
-    - 'tooling/*'
 
 vcs:
   provider: 'github'
@@ -24,9 +23,3 @@ constraints:
 pipeline:
   installDependencies: false
   cacheLifetime: '7 days'
-
-experiments:
-  asyncAffectedTracking: true
-  asyncGraphBuilding: true
-  nativeFileHashing: true
-  casOutputsCache: true
