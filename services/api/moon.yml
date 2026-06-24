@@ -1,0 +1,12 @@
+layer: 'application'
+stack: 'backend'
+
+project:
+  title: '@repo/api'
+  description: '@repo/api project'
+  owner: 'platform'
+  maintainers:
+  - '@thomas.carter'
+
+tags:
+  - 'backend'

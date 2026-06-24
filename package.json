@@ -1,0 +1,45 @@
+{
+  "name": "enterprise-bun-mono",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@latest",
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*",
+    "tooling/*"
+  ],
+  "scripts": {
+    "dev": "moon run :dev",
+    "build": "moon run :build",
+    "test": "moon run :test",
+    "typecheck": "moon run :typecheck",
+    "lint": "moon run :lint",
+    "format": "moon run :format",
+    "check": "bunx biome check .",
+    "check:write": "bunx biome check --write .",
+    "deps:check": "bunx syncpack list-mismatches",
+    "deps:fix": "bunx syncpack fix-mismatches",
+    "deadcode": "bunx knip",
+    "arch": "bunx depcruise . --config .dependency-cruiser.cjs",
+    "security:secrets": "gitleaks detect --source . --verbose",
+    "security:fs": "trivy fs .",
+    "sbom": "syft . -o cyclonedx-json=sbom.cdx.json",
+    "verify": "bun run check && bun run deps:check && bun run deadcode && bun run arch && moon run :typecheck :test :build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "latest",
+    "@changesets/cli": "latest",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@moonrepo/cli": "latest",
+    "@playwright/test": "latest",
+    "@types/bun": "latest",
+    "dependency-cruiser": "latest",
+    "knip": "latest",
+    "lefthook": "latest",
+    "syncpack": "latest",
+    "typescript": "latest",
+    "vitest": "latest"
+  }
+}

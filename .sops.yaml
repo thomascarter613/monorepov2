@@ -1,0 +1,25 @@
+creation_rules:
+
+* path_regex: infra/secrets/.*.ya?ml$
+  encrypted_regex: '^(data|stringData|password|token|secret|key)$'
+  age: AGE_PUBLIC_KEY_GOES_HERE
+  YAML
+
+mkdir -p infra/secrets
+cat > infra/external-secrets/example-external-secret.yaml <<'YAML'
+apiVersion: external-secrets.io/v1
+kind: ExternalSecret
+metadata:
+name: api-secrets
+spec:
+refreshInterval: 1h
+secretStoreRef:
+name: example-secret-store
+kind: SecretStore
+target:
+name: api-secrets
+creationPolicy: Owner
+data:
+- secretKey: DATABASE_URL
+remoteRef:
+key: api/database-url

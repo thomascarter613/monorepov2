@@ -1,0 +1,15 @@
+[tools]
+bun = "latest"
+node = "lts"
+
+[tasks.install]
+description = "Install workspace dependencies"
+run = "bun install"
+
+[tasks.verify]
+description = "Run the full local verification gate"
+run = "bun run verify"
+
+[tasks.dev]
+description = "Run all dev tasks through moon"
+run = "bun run dev"

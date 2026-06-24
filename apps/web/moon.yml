@@ -1,0 +1,12 @@
+layer: 'application'
+stack: 'frontend'
+
+project:
+  title: '@repo/web'
+  description: '@repo/web project'
+  owner: 'platform'
+  maintainers:
+  - '@thomas.carter'
+
+tags:
+  - 'frontend'

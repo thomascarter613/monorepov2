@@ -1,0 +1,32 @@
+projects:
+  globFormat: 'source-path'
+  globs:
+    - 'apps/*'
+    - 'services/*'
+    - 'packages/*'
+    - 'tooling/*'
+
+vcs:
+  provider: 'github'
+  defaultBranch: 'main'
+
+codeowners:
+  sync: true
+  globalPaths:
+    '*': ['@thomas.carter']
+    '/.github/': ['@thomas.carter']
+    '/infra/': ['@thomas.carter']
+    '/docs/adr/': ['@thomas.carter']
+
+constraints:
+  enforceLayerRelationships: true
+
+pipeline:
+  installDependencies: false
+  cacheLifetime: '7 days'
+
+experiments:
+  asyncAffectedTracking: true
+  asyncGraphBuilding: true
+  nativeFileHashing: true
+  casOutputsCache: true

@@ -1,0 +1,19 @@
+pre-commit:
+  parallel: true
+  commands:
+    biome:
+      run: bunx biome check --write {staged_files}
+      stage_fixed: true
+    gitleaks:
+      run: gitleaks protect --staged --verbose
+
+pre-push:
+  parallel: false
+  commands:
+    verify:
+      run: bun run verify
+
+commit-msg:
+  commands:
+    commitlint:
+      run: bunx commitlint --edit {1}

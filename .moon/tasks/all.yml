@@ -1,0 +1,48 @@
+fileGroups:
+  sources:
+    - 'src/**/*'
+    - 'package.json'
+    - 'tsconfig.json'
+  tests:
+    - 'src/**/*.test.ts'
+    - 'tests/**/*'
+  configs:
+    - '*.config.*'
+    - 'moon.yml'
+
+tasks:
+  lint:
+    command: 'bunx biome check .'
+    inputs:
+      - '@group(sources)'
+      - '@group(configs)'
+
+  format:
+    command: 'bunx biome check --write .'
+    inputs:
+      - '@group(sources)'
+      - '@group(configs)'
+
+  typecheck:
+    command: 'bunx tsc --noEmit'
+    inputs:
+      - '@group(sources)'
+      - '@group(configs)'
+
+  test:
+    command: 'bunx vitest run --passWithNoTests'
+    inputs:
+      - '@group(sources)'
+      - '@group(tests)'
+    outputs:
+      - 'coverage'
+
+  build:
+    command: 'bun run build'
+    deps:
+      - '^:build'
+    inputs:
+      - '@group(sources)'
+      - '@group(configs)'
+    outputs:
+      - 'dist'

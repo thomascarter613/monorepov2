@@ -1,0 +1,22 @@
+FROM oven/bun:1 AS deps
+WORKDIR /repo
+
+COPY package.json bun.lock ./
+COPY apps ./apps
+COPY services ./services
+COPY packages ./packages
+COPY tsconfig.json tsconfig.base.json ./
+
+RUN bun install --frozen-lockfile
+
+FROM deps AS build
+RUN bunx moon run services-api:build
+
+FROM oven/bun:1-slim AS runtime
+WORKDIR /app
+ENV NODE_ENV=production
+
+COPY --from=deps /repo /app
+
+USER bun
+CMD ["bun", "run", "services/api/src/index.ts"]

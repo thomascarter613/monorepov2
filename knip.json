@@ -1,0 +1,9 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "workspaces": {
+    "apps/*": {},
+    "services/*": {},
+    "packages/*": {}
+  },
+  "ignore": ["dist/**", "build/**", "coverage/**", "infra/**"]
+}

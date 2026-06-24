@@ -1,0 +1,12 @@
+layer: 'library'
+stack: 'unknown'
+
+project:
+  title: '@repo/types'
+  description: '@repo/types project'
+  owner: 'platform'
+  maintainers:
+  - '@thomas.carter'
+
+tags:
+  - 'unknown'

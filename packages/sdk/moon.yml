@@ -1,0 +1,12 @@
+layer: 'library'
+stack: 'frontend'
+
+project:
+  title: '@repo/sdk'
+  description: '@repo/sdk project'
+  owner: 'platform'
+  maintainers:
+  - '@thomas.carter'
+
+tags:
+  - 'frontend'

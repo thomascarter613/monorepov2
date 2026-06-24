@@ -1,0 +1,12 @@
+node_modules
+dist
+build
+coverage
+.moon/cache
+.env
+.env.*
+!.env.example
+.DS_Store
+sbom.cdx.json
+playwright-report
+test-results

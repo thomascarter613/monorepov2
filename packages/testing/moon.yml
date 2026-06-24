@@ -1,0 +1,12 @@
+layer: 'library'
+stack: 'unknown'
+
+project:
+  title: '@repo/testing'
+  description: '@repo/testing project'
+  owner: 'platform'
+  maintainers:
+  - '@thomas.carter'
+
+tags:
+  - 'unknown'

@@ -1,0 +1,12 @@
+layer: 'library'
+stack: 'unknown'
+
+project:
+  title: '@repo/config'
+  description: '@repo/config project'
+  owner: 'platform'
+  maintainers:
+  - '@thomas.carter'
+
+tags: 
+  - 'unknown'
